@@ -1,23 +1,25 @@
 import * as consts from '../actions/constans';
-const initialState = {
-    counter: 0
-};
+const initialState = [];
 
-function appReducer(state = initialState, action) {
+function TaskReducer(state = initialState, action) {
     switch(action.type) {
-        case consts.INC:
-            return {
-                ...state,
-                counter: state.counter + 1
+        case consts.ADD_TASK:
+            return [
+            ...state,
+            {
+                id: action.payload.id + 1,
+                name: action.payload.text,
+                done: false
             }
-        case consts.DEC:
-            return {
-                ...state,
-                counter: state.counter - 1
-            }
+    ]
+        case consts.TOGGLE_TASK:
+            return state.map((task) => 
+                (task.id === action.payload.id)
+                    ? {...task, done: !task.done}
+                    : task )
         default:
             return state;
     }
 }
 
-export default appReducer;
+export default TaskReducer;
