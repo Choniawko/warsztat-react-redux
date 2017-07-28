@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
-import appReducer from '../reducers';
+import TaskReducer from '../reducers';
 
-export const store = createStore(appReducer, applyMiddleware(logger));
+export const store = createStore(TaskReducer, applyMiddleware(logger));
