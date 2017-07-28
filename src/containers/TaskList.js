@@ -1,10 +1,11 @@
 import React from 'react';
 import TaskItem from '../components/TaskItem';
+import { connect } from 'react-redux';
 
 class TaskListContainer extends React.Component {
     
     render() {
-        const tasks = [];
+        const { tasks } = this.props;
         return (
             <ul>
                 {tasks.map((task) => {
@@ -20,4 +21,8 @@ class TaskListContainer extends React.Component {
     }
 }
 
-export default TaskListContainer;
+const mapStateToProps = (state) => ({
+  tasks: state
+});
+
+export default TaskListContainer = connect(mapStateToProps)(TaskListContainer);
