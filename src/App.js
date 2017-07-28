@@ -14,8 +14,8 @@ class App extends Component {
           <h2>{store.getState().counter}</h2>
         </div>
         <div>
-          <button onClick={() => store.dispatch(actions.increment())} type="button">+</button>
-          <button onClick={() => store.dispatch(actions.decrement())} type="button">-</button>
+          <button onClick={() => store.dispatch(actions.increment)} type="button">+</button>
+          <button onClick={() => store.dispatch(actions.decrement)} type="button">-</button>
         </div> 
       </div>
     );
