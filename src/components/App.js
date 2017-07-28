@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import AddTaskContainer from '../containers/AddTask';
+import TaskLIstContainer from '../containers/TaskList';
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Header</h2>
           <AddTaskContainer />
-          {/*  <TaskLIst /> */}
+          <TaskLIstContainer />
         </div>
       </div>
     );
